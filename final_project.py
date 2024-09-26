@@ -37,7 +37,7 @@ def play_game():
     range_limit, max_attempts = choose_difficulty()
     number_to_guess = random.randint(1, range_limit)
     attempts = 0
-    score = 100  # Starting score
+    score = 100  
 
     while attempts < max_attempts:
         guess = get_user_guess()
@@ -61,9 +61,11 @@ def main():
     while True:
         play_game()
         play_again = input("Do you want to play again? (yes/no): ").strip().lower()
-        if play_again != 'yes':
+        if play_again == 'no':
             print("Thanks for playing!")
             break
+        elif play_again != 'yes':
+            print("Invalid choice.")
+            break
 
-if __name__ == "__main__":
-    main()
+main()
